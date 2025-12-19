@@ -1,0 +1,98 @@
+$logo-color-w: #FFFFFF;
+$logo-color-b: #4D8FC3;
+$logo-color-r: #C34D4D;
+$desc-text-color: #E0AB9A;
+$black-back: #000;
+$oswald: 'Oswald';
+$placeholder: #959595;
+// ============================
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+// ============================
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: white;
+    font-family: 'Jura';
+    list-style: none;
+    outline: none;
+}
+.inputCont{
+    position: relative;
+    label{
+        color: $placeholder;
+        font-family: $oswald;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 2px;
+        background-color: $desc-text-color;
+        position: relative;
+
+        position: absolute;
+        left: 14px;
+        top: 7px;
+
+        transition: .3s;
+    }
+
+    .CustomInput:focus + label {
+        top: -25%;
+        z-index: 3;
+    }
+    .CustomInput:not(:placeholder-shown) + label{
+        top: -25%;
+        z-index: 3;
+    }
+    img{
+        width: 16px;
+        height: 16px;
+
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 3;
+    }
+
+}
+
+.CustomInput{
+    width: 100%;
+    height: 40px;
+    color: $black-back;
+    padding: 9px 15px;
+    border: 1px solid $black-back !important;
+    border-radius: 7px;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    font-family: $oswald;
+    font-size: 15px;
+
+    &::placeholder{
+        color: transparent;
+        font-family: $oswald;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    &[status="false"]{
+        background: url(../../icons/false-input-check.svg);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 95% center;
+    }
+    &[status="true"]{
+        background: url(../../icons/true-input-check.svg);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: 95% center;
+    }
+
+    
+}
+.password{
+    background-position: 90% center !important;
+}

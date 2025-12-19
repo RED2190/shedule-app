@@ -1,0 +1,88 @@
+$logo-color-w: #FFFFFF;
+$logo-color-b: #4D8FC3;
+$logo-color-r: #C34D4D;
+$desc-text-color: #E0AB9A;
+$oswald: 'Oswald', sans-serif;
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px $desc-text-color inset;
+  
+  }
+// ============================
+#root{
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 100%;
+}
+main{
+  padding: 50px 0;
+  height: 100% !important;
+  overflow: scroll;
+}
+body{
+  height: 100%;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+}
+.def-button{
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 12px;
+    border: solid 1px #E0AB9A;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-box{
+    display: flex;
+    width: 100%;
+}
+.column-box{
+    flex-direction: column;
+}
+.p1{
+  font-size: 15px;
+  font-weight: 200;
+  color: $desc-text-color;
+  width: max-content;
+}
+.h2{
+  font-weight: 200;
+  font-size: 15px;
+  font-family: $oswald;
+}
+li{
+  font-family: $oswald;
+  font-weight: 300;
+  font-size: 12px;
+}
+main{
+    width: 100vw;
+    height: 100%;
+    background-color: #081012;
+}
+
+
+
+.logo{
+  gap: 10px;
+  width: max-content;
+  span{
+    font-size: 24px;
+    font-weight: 700;
+    width: max-content;
+  }
+  .logo-color-w{ color: $logo-color-w; }
+  .logo-color-b{ color: $logo-color-b; }
+  .logo-color-r{ color: $logo-color-r; }
+}

@@ -1,0 +1,158 @@
+$logo-color-w: #FFFFFF;
+$logo-color-b: #4D8FC3;
+$logo-color-r: #C34D4D;
+$desc-text-color: #E0AB9A;
+$black-back: #000;
+$oswald: 'Oswald', sans-serif;
+$Jura: 'Jura', sans-serif;
+// ============================
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+// ============================
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: white;
+    font-family: 'Jura';
+    list-style: none;
+}
+.files-page{
+    h1{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 27px;
+    }
+    section{
+        padding: 0 34px;
+    }
+    .data-group{
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding-top: 30px;
+        gap: 20px;
+        flex-wrap: wrap;
+        .file{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+            position: relative;
+            *{
+                transition: .5s;
+            }
+            transition: .5s;
+            img{
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+            }
+            span{
+                display: none;
+            }
+            ul{
+                margin-top: 2px;
+                width: 100%;
+                li{
+                    font-family: $oswald;
+                    font-size: 12px;
+                    color: $desc-text-color;
+                    *{
+                        font-family: $oswald;
+                        font-size: 12px;
+                        
+                    }
+                    text-align: center;
+                    margin-top: 2px;
+                    width: 100%;
+                    overflow: hidden;
+                    text-wrap: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: none;
+                    &:first-child{
+                        display: block;
+                    }
+                }
+            }
+            button{
+                display: none;
+            }
+            .clickArea{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+            }
+            .closeButton{
+                display: none;
+            }
+            &[active='true']{
+                border-bottom: $desc-text-color solid 1px;
+                padding-bottom: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                position: relative;
+                order: -1;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                }
+                span{
+                    display: block;
+                }
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+                    margin-top: 0px;
+                    padding-left: 15px;
+                    li{
+                        display: flex;
+                    }
+                }
+                button{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: $Jura;
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    background: transparent;
+                    border: 1px solid $desc-text-color;
+                    border-radius: 5px;
+                    box-sizing: content-box;
+                    padding: 4px 20px;
+                    font-weight: 600;
+                    align-self: flex-end;
+                }
+                .closeButton{
+                    width: 13px;
+                    height: 13px;
+                    padding: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: url(../../icons/closePink.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    border: none;
+                }
+                .clickArea{
+                    display: none;
+                }
+            }
+        }
+    }
+}

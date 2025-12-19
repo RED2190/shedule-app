@@ -1,0 +1,76 @@
+$logo-color-w: #FFFFFF;
+$logo-color-b: #4D8FC3;
+$logo-color-r: #C34D4D;
+$desc-text-color: #E0AB9A;
+$black-back: hsla(0, 0%, 0%, 0.6);
+$span-color: #959595;
+$jura: 'Jura', sans-serif;
+$oswald: 'Oswald', sans-serif;
+// ============================
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+// ============================
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    color: white;
+    font-family: 'Jura';
+    list-style: none;
+}
+.alert-panel {
+  &[visible='false']{
+    top: -100%;
+  }
+  @media (max-width: 480px) {
+    width: 100vw;
+    height: 100vh;
+    background-color: $black-back;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top .5s;
+    .main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: auto;
+      background: #E0AB9A;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      position: relative;
+      
+      p{
+        font-family: $jura;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+      }
+      span{
+        font-family: $oswald;
+        font-size: 15px;
+        font-weight: 400;
+        color: #000;
+        margin-top: 13px;
+      }
+      .progress-bar{
+        margin-top: 32px;
+        align-self: self-start;
+        width: 10%;
+        height: 5px;
+        border-radius: 360px;
+        border-top-left-radius: 0;
+        background: linear-gradient($logo-color-b, $logo-color-b) ;
+        transition: width .3s;
+      }
+    }
+  }    
+}
+
